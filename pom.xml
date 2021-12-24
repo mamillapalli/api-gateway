@@ -58,6 +58,10 @@
             <version>3.0.3</version>
         </dependency>
 
+
+
+
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -76,6 +80,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${project.parent.version}</version>
+                <configuration>
+                    <image>
+                        <name>ravikanthm/${project.artifactId}:${project.version}</name>
+                    </image>
+                    <pullPolicy>IF_NOT_PRESENT</pullPolicy>
+
+                </configuration>
             </plugin>
         </plugins>
     </build>
